@@ -26,29 +26,41 @@ const CTA = () => {
         body: JSON.stringify({ email: email })
       });
       
-      const result = await response.json();
-      
-      if (result.success) {
+      if (response.ok) {
+        const result = await response.json();
+        
+        if (result.success) {
+          toast({
+            title: "🎉 Thank you!",
+            description: "You've been added to our waitlist. We'll be in touch soon.",
+          });
+          setEmail("");
+        } else {
+          toast({
+            title: "⚠️ " + (result.message || 'Something went wrong'),
+            description: "Please try again or contact support if the issue persists.",
+            variant: "destructive"
+          });
+        }
+      } else {
+        // Fallback: Open mailto link if API is down
+        window.location.href = `mailto:hello@consentricai.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
         toast({
-          title: "🎉 Thank you!",
-          description: "You've been added to our waitlist. We'll be in touch soon.",
+          title: "📧 Opening email client",
+          description: "Since our signup system is temporarily down, we've opened your email client to register manually.",
         });
         setEmail("");
-      } else {
-        toast({
-          title: "⚠️ " + (result.message || 'Something went wrong'),
-          description: "Please try again or contact support if the issue persists.",
-          variant: "destructive"
-        });
       }
       
     } catch (error) {
       console.error('Error:', error);
+      // Fallback: Open mailto link for network errors too
+      window.location.href = `mailto:hello@consentricai.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
       toast({
-        title: "❌ Network error",
-        description: "Please check your connection and try again.",
-        variant: "destructive"
+        title: "📧 Opening email client",
+        description: "We've opened your email client so you can register manually.",
       });
+      setEmail("");
     } finally {
       setIsSubmitting(false);
     }

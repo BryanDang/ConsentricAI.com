@@ -29,12 +29,29 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" variant="hero" className="text-lg px-8 py-4 rounded-full">
+            <Button 
+              size="lg" 
+              variant="hero" 
+              className="text-lg px-8 py-4 rounded-full"
+              onClick={() => {
+                const ctaSection = document.querySelector('section:last-of-type');
+                ctaSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Join the Waitlist
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
             
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg px-8 py-4 rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary font-semibold"
+              onClick={() => {
+                // For now, scroll to learn more about the product
+                const howItWorksSection = document.querySelector('section:nth-of-type(3)');
+                howItWorksSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Watch Demo
             </Button>
           </div>
