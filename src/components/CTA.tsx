@@ -67,7 +67,7 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-hero">
+    <section id="waitlist" className="py-24 bg-gradient-hero">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">

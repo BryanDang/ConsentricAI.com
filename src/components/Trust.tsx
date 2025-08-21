@@ -20,7 +20,7 @@ const trustFeatures = [
 
 const Trust = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="trust" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">

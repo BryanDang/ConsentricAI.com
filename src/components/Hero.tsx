@@ -34,7 +34,7 @@ const Hero = () => {
               variant="hero" 
               className="text-lg px-8 py-4 rounded-full"
               onClick={() => {
-                const ctaSection = document.querySelector('section:last-of-type');
+                const ctaSection = document.getElementById('waitlist');
                 ctaSection?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
@@ -44,8 +44,8 @@ const Hero = () => {
             
             <Button 
               size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-4 rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary font-semibold"
+              variant="secondary" 
+              className="text-lg px-8 py-4 rounded-full bg-gray-800 text-white hover:bg-gray-700 font-semibold"
               onClick={() => {
                 // For now, scroll to learn more about the product
                 const howItWorksSection = document.querySelector('section:nth-of-type(3)');

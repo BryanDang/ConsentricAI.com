@@ -11,9 +11,24 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6 text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+            <button 
+              onClick={() => {
+                const trustSection = document.getElementById('trust');
+                trustSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hover:text-primary transition-colors cursor-pointer"
+            >
+              Privacy
+            </button>
+            <button 
+              onClick={() => {
+                const waitlistSection = document.getElementById('waitlist');
+                waitlistSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hover:text-primary transition-colors cursor-pointer"
+            >
+              Contact
+            </button>
           </div>
         </div>
         
