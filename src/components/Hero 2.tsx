@@ -29,26 +29,16 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              variant="hero" 
-              className="text-lg px-8 py-4 rounded-full"
-              onClick={() => {
-                const ctaSection = document.getElementById('waitlist');
-                ctaSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
+            <Button size="lg" variant="hero" className="text-lg px-8 py-4 rounded-full">
               Join the Waitlist
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
             
             <Button 
               size="lg" 
-              variant="secondary" 
-              className="text-lg px-8 py-4 rounded-full bg-gray-800 text-white hover:bg-gray-700 font-semibold"
-              onClick={() => {
-                window.open('https://youtu.be/2FTN2r_RaOE', '_blank');
-              }}
+              variant="outline" 
+              className="text-lg px-8 py-4 rounded-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary font-semibold"
+              onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
             >
               Watch Demo
             </Button>
