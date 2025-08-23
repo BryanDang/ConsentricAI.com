@@ -44,7 +44,7 @@ const CTA = () => {
         }
       } else {
         // Fallback: Open mailto link if API is down
-        window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, add the following email to the consentricAI waitlist! I'll email back if I want to be unsubscribed.%0A%0AEmail: ${encodeURIComponent(email)}`;
+        window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, add the following email to the consentricAI waitlist!%0A%0A${encodeURIComponent(email)}%0A%0AI'll email back if I want to be unsubscribed.`;
         toast({
           title: "📧 Opening email client",
           description: "Since our signup system is temporarily down, we've opened your email client to register manually.",
@@ -55,7 +55,7 @@ const CTA = () => {
     } catch (error) {
       console.error('Error:', error);
       // Fallback: Open mailto link for network errors too
-      window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, add the following email to the consentricAI waitlist! I'll email back if I want to be unsubscribed.%0A%0AEmail: ${encodeURIComponent(email)}`;
+      window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, add the following email to the consentricAI waitlist!%0A%0A${encodeURIComponent(email)}%0A%0AI'll email back if I want to be unsubscribed.`;
       toast({
         title: "📧 Opening email client",
         description: "We've opened your email client so you can register manually.",
