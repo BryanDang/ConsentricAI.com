@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ChevronRight, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMWzBqEXGCIlB-RJUtzZYT-59HikMZ5LRt3kq1_Hgt2xRpjKZ_SqbQ7vMyxxZsw9rz/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmTdnQp-uF9sZn24oHyfa0t3N6znCG-54szyk27aK0rn86e-MqiUVFUi9tbM94tSLb/exec';
 
 const CTA = () => {
   const [email, setEmail] = useState("");
