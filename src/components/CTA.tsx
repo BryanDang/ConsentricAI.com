@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ChevronRight, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4uVNjC1djHIHwkJKo5sic_04TavsCXsH3jaBZ3NAFs1yvOmV0PmHjcnmY95-7A5GQ/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMWzBqEXGCIlB-RJUtzZYT-59HikMZ5LRt3kq1_Hgt2xRpjKZ_SqbQ7vMyxxZsw9rz/exec';
 
 const CTA = () => {
   const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ const CTA = () => {
         }
       } else {
         // Fallback: Open mailto link if API is down
-        window.location.href = `mailto:emailmebryand@gmail.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
+        window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
         toast({
           title: "📧 Opening email client",
           description: "Since our signup system is temporarily down, we've opened your email client to register manually.",
@@ -55,7 +55,7 @@ const CTA = () => {
     } catch (error) {
       console.error('Error:', error);
       // Fallback: Open mailto link for network errors too
-      window.location.href = `mailto:emailmebryand@gmail.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
+      window.location.href = `mailto:consentricai@gmail.com?subject=Waitlist Registration&body=Hi, I'd like to join the ConsentricAI waitlist.%0A%0AEmail: ${encodeURIComponent(email)}`;
       toast({
         title: "📧 Opening email client",
         description: "We've opened your email client so you can register manually.",
